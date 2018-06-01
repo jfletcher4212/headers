@@ -3,17 +3,35 @@
 
    <head>
       <title>HTTP Header Information</title>
-      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="/public/style.css" rel="stylesheet" type="text/css">
    </head>
 
    <body>
       <div class="container">
-         <h1>See what your HTTP headers have to say</h1>
-         <h3>Usage:</h3>
-         <p><a href="https://jfletcher-headers.glitch.me/api/whoami">/api/whoami</a> - shows information about your IP address, language, and system software</p>
-         <p><a href="https://jfletcher-headers.glitch.me/api/whoami-full">/api/whoami-full</a> - shows more information about your IP address, language, and system software</p>
+         <h1>FreeCodeCamp BackEnd API Projects</h1>
+        <h3>Request Header Parser</h3>
+        <div class="box">
+          <h3>Usage:</h3>
+          <ul>
+           <li><a href="https://jfletcher-headers.glitch.me/api/whoami">/api/whoami</a> 
+             - shows information about your IP address, language, and system software</li>
+            <li><a href="https://jfletcher-headers.glitch.me/api/whoami-short">/api/whoami-short</a> 
+              - Deprecated; shows shortened information about your IP address, language, and system software</li>
+           <li><a href="https://jfletcher-headers.glitch.me/api/whoami-full">/api/whoami-full</a> 
+             - Deprecated - shows full header information about your IP address, language, and system software</li>
+          </ul>
+          <h3>
+             Example Output:
+          </h3>
+          <p class="example">
+            {
+              "ipaddress": "208.100.253.123",
+              "language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+              "software": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+            }
+          </p>
+        </div>
       </div>
    </body>
 
