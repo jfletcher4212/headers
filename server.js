@@ -39,6 +39,20 @@ app.route('/')
     })
 app.route('/api/whoami')
     .get(function(req, res) {
+      var ip =       req.headers['x-forwarded-for'].match(/^[^,]+/)[0];    
+      var language = req.headers['accept-language'];
+      var software = req.headers['user-agent'];
+      
+      var retval = {
+        'ipaddress': ip,
+        'language': language,
+        'software': software
+      }
+      res.end(JSON.stringify(retval));//"Browser info here: " + req.headers['x-forwarded-for'].match(/^\d+.\d+.\d+.\d+/))
+      
+})
+app.route('/api/whoami-short')
+    .get(function(req, res) {
       var language = req.headers['accept-language'].match(/^[^,;]+/)[0];
       var software = req.headers['user-agent'].match(/\([^)]*\)/)[0];
       software = software.substring(1, software.length - 1);
@@ -49,7 +63,7 @@ app.route('/api/whoami')
         'ipaddress': ip
       }
       res.end(JSON.stringify(retval));//"Browser info here: " + req.headers['x-forwarded-for'].match(/^\d+.\d+.\d+.\d+/))
-      //console.log(req.headers)
+      
 })
 app.route('/api/whoami-full')
     .get(function(req,res) {
